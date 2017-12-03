@@ -1,0 +1,85 @@
+# The start symbol is START.
+
+# These two rules are required; please do not change these weights!
+99	START	S1
+1	START	S2
+
+# This is a very, very, very simple grammar to get you started.
+
+# Sentences
+1	S1	NP VP EOF
+1	S1	QP VP EOF
+1	S1	WHP VP EOF
+1	S1	WHP QP EOF
+1	S1	WHP QP CL EOF
+
+# Question phrases
+1	QP	QW NP
+1	QP	QW NP VP
+
+# Clauses
+1	CL	NP VP
+
+
+# WH phrases
+1	WHP	WHD NP
+1	WHP	WHD VP
+1	WHP	WAD
+1	WHP	WHD
+
+#  Verb phrases
+1	VP	Vbar
+1	VP	Vbar NP
+1	VP	Vbar VP
+1	VP	Vbar PP
+1	VP	MD VP
+1	VP	VerbB VP
+1	VP	VerbB NP
+1	VP	Vbar ADJP
+1	VP	TO VP
+1	VP	VP ADVP
+1	VP	VP ADVP PP
+
+# Verb phrase, inner level
+1	Vbar	VerbB
+1	Vbar	VerbT
+1	Vbar	VerbTP
+1	Vbar	VerbD
+1	Vbar	VerbPP
+1	Vbar	VerbPrP
+1	Vbar	WAD
+1	Vbar	Vbar PP
+
+# Adverb Phrase
+1	ADVP	AD AD
+1	ADVP	AD
+
+# Noun phrases
+20	NP	Det Nbar
+1	NP	NP PP
+1	NP	Num Nbar
+1	NP	Nbar
+1	NP	NP CC NP 
+
+
+# Noun phrase, inner level
+20	Nbar	Noun
+1	Nbar	Proper
+1	Nbar	NNP
+1	Nbar	PrNN
+1	Nbar	PropP
+1	Nbar	PProNN
+1	Nbar	JJ Nbar
+1	Nbar	JJS Nbar
+1	Nbar	Nbar PP
+
+
+# Prepositional phrase
+1	PP	Prep NP
+1	PP	TO NP
+
+
+# Adjective phrases
+1	ADJP	NT JJ
+
+
